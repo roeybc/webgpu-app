@@ -12,7 +12,10 @@ fn main(@builtin(local_invocation_id) lid: vec3<u32>,
 
   workgroupBarrier();
   out[gid.x] = shared_memory[lid.x];
-  if (gid.x > 0) {
+
+  if (lid.x > 0) {
       out[gid.x] += shared_memory[lid.x - 1];
+  } else if (gid.x > 0) {
+    out[gid.x] += a[gid.x-1];
   }
 }
