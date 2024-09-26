@@ -7,13 +7,7 @@ const wgs = vec3(WORKGROUP_SIZE);
 
 @compute @workgroup_size(WORKGROUP_SIZE)
 fn main(@builtin(local_invocation_id) lid: vec3<u32>) {
-  let width = wgs.x;
   let x = lid.x;
-  let y = lid.y;
-  
-  // Calculate the 1D index based on 2D coordinates (x, y)
-  let i = y * width + x;
-  
-  // Add the constant to the input and store in output
+  let i = x;
   out[i] = a[i] + 5;
 }

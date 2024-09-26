@@ -1,6 +1,6 @@
 // main.ts
 import './style.css';
-import shaderCode from './blocker.wgsl?raw';
+import shaderCode from './add.wgsl?raw';
 
 async function run() {
     if (!navigator.gpu) {
