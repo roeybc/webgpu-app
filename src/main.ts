@@ -84,7 +84,7 @@ async function run() {
     computePass.setBindGroup(0, bindGroup);
 
     // Calculate workgroup sizes
-    const workgroupSize = 64;
+    const workgroupSize = 9;
     const numWorkgroups = Math.ceil(ARRAY_SIZE / workgroupSize);
     computePass.dispatchWorkgroups(numWorkgroups);
     computePass.end();
